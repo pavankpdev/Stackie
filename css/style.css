@@ -1,0 +1,39 @@
+@import url(
+  https://fonts.googleapis.com/css?family=Open+Sans:300,
+  300italic,
+  regular,
+  italic,
+  600,
+  600italic,
+  700,
+  700italic,
+  800,
+  800italic
+);
+
+body {
+  font-family: "Open Sans";
+}
+.logo {
+  width: 10%;
+}
+
+hr {
+  border: 2px solid #343a40;
+  width: 12%;
+}
+
+.stack {
+  border: 2px solid #343a40;
+}
+
+.stackBody tr {
+  border: 2px solid #343a40;
+}
+
+.main-table {
+  border: 1px solid #232323;
+}
+.main-table-body tr td {
+  border: 1px solid #232323;
+}
