@@ -17,8 +17,7 @@ class PushToStack {
     if (input) {
       stack.push(input);
       UI.handleSimulationPush(input);
-      document.querySelector(".pushSmall").innerHTML = "Success! Good Going";
-
+      UI.message().messageObject.pushSuccess(input);
     } else {
       console.log("failed!");
     }
@@ -30,6 +29,7 @@ class PushToStack {
     if (output) {
       UI.handleSimulationPop();
       UI.sendOutputToForm(output);
+      UI.message().messageObject.popSuccess(output);
     } else {
       console.log("empty stack!");
     }
@@ -62,8 +62,31 @@ class UI {
   }
 
   // display messages
-  static message(status){
-    
+  static message() {
+    messageObject = {
+      pushSuccess: value => {
+        document.querySelector(".pushSmall").innerHTML =
+          "Success! " +
+          "<b style='color:#0055fe'>" +
+          value +
+          "</b>" +
+          " sucessfully inserted";
+        setTimeout(() => {
+          document.querySelector(".pushSmall").innerHTML = "";
+        }, 1000);
+      },
+      popSuccess: value => {
+        document.querySelector(".poppedSmall").innerHTML =
+          "Success! " +
+          "<b style='color:#0055fe'>" +
+          value +
+          "</b>" +
+          " sucessfully popped out";
+        setTimeout(() => {
+          document.querySelector(".poppedSmall").innerHTML = "";
+        }, 1000);
+      }
+    };
   }
 }
 
